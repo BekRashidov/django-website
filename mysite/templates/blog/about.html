@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/mysite/static/all.css">
+  <link rel="stylesheet" href="/mysite/static/bootstrap.css" >
+  <link rel="stylesheet" href="/mysite/static/style.css">
+  <title>Online yuridik xizmatlar</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a href="{% url 'blog:home' %}" class="navbar-brand"><i class="fas fa-balance-scale"></i></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="{% url 'blog:home' %}" class="nav-link">Bosh sahifa</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'blog:about' %}" class="nav-link">Biz haqimizda</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'blog:index' %}" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'blog:contact' %}" class="nav-link">Biz bilan bog'laning</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="about-banner">
+    <div class="container text-center py-5 text-white">
+      <h1>Bizning kompaniyamiz haqida</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aut doloribus dolores minus</br> voluptatibus in?</p>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-6">
+          <h3>What we do</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, doloremque
+            quidem quasi sint reiciendis rem voluptas atque ab nam non, qui excepturi unde optio cum,
+            omnis necessitatibus recusandae a repellat.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, doloremque
+              quidem quasi sint reiciendis rem voluptas atque ab nam non, qui excepturi unde optio cum,
+              omnis necessitatibus recusandae a repellat.</p>
+
+        </div>
+        <div class="col-md-6">
+          <img src="{% static 'assets/pexels-august-de-richelieu-4427430.jpg' %}" alt="" class="rounded-circle img-fluid about-img d-contents">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="our-staff bg-dark">
+    <div class="container text-center text-white">
+      <h2>Bizning jamoa</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'assets/person1.jpg' %}" alt="" class="rounded-circle">
+          <h3>Lobar Hakimova</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'assets/person2.jpg' %}" alt=""class="rounded-circle">
+          <h3>Nigora Muxtorova</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'assets/person3.jpg' %}" alt=""class="rounded-circle">
+          <h3>Suxrob Murodov</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'assets/person4.jpg' %}" alt=""class="rounded-circle">
+          <h3>Farhod Shodmonov</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- FOOTER -->
+<footer id="main-footer" class="text-center p-4 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>Copyright &copy;
+          <span id="year"></span> Kahharoff</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="{% static "jquery.js" %}"></script>
+  <script src="{% static "popper.js" %}"></script>
+  <script src="{% static "bootstrap.js" %}"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+
+  </script>
+</body>
+
+</html>

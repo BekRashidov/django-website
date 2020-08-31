@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a href="{% url 'blog:home' %}" class="navbar-brand"><i class="fas fa-balance-scale">iLawyer.uz</i></a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="{% url 'blog:home' %}" class="nav-link">Bosh sahifa</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'blog:about' %}" class="nav-link">Biz haqimizda</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'blog:index' %}" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'blog:contact' %}" class="nav-link">Biz bilan bog'laning</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        <p class="card-text ">{{ object.content | safe }}</p>
+      </div>
+    </div>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+</div>
+
+{% endblock content %}

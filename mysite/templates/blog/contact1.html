@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Biz bilan bog`lanish</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "contact/images/icons/favicon.ico" %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/css-hamburgers/hamburgers.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="{% static "contact/vendor/bootstrap/css/bootstrap.css" %}" >
+	<link rel="stylesheet" type="text/css" href="{% static "contact/css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "contact/css/main.css" %}">
+	
+<!--===============================================================================================-->
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container">
+		  <a href="{% url 'blog:home' %}" class="navbar-brand"><i class="fas fa-balance-scale">iLawyer.uz</i></a>
+		  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a href="{% url 'blog:home' %}" class="nav-link">Bosh sahifa</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{% url 'blog:about' %}" class="nav-link">Biz haqimizda</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{% url 'blog:index' %}" class="nav-link">Blog</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{% url 'blog:contact' %}" class="nav-link">Biz bilan bog'laning</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+	<div class="bg-contact100" style="background-image: url('/static/contact/images/bg-01.jpg');">
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+				<div class="contact100-pic js-tilt" data-tilt>
+				<img src="{% static "contact/images/bg-01.jpg" %}" alt="IMG">
+				</div>
+
+				<form action="submit_form" method="POST" class="contact100-form validate-form">
+					<span class="contact100-form-title">
+						Biz bilan bog`laning!
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="text" name="name" placeholder="Ism">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Message is required">
+						<textarea class="input100" name="message" placeholder="Xabar"></textarea>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							Jo`natish
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/bootstrap/js/popper.js" %}"></script>
+	<script src="{% static "contact/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/select2/select2.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/js/main.js" %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
