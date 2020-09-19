@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<script src="//code.jivosite.com/widget/pvNOxCEa74" async></script>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a href="{% url 'home' %}" class="navbar-brand">
+      <img src="../static/assets/balogo.jpg" alt="" style=" width: 50px;">
+        <strong style="color: aliceblue;">iLawyer.uz </strong> 
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto" style="font-size: 14px;">
+        <li class="nav-item">
+          <a href="{% url 'home' %}" class="nav-link">Bosh sahifa</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'about' %}" class="nav-link">Biz haqimizda</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'blog:index' %}" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'blog:contact' %}" class="nav-link">Biz bilan bog'laning</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1 style="text-align: center; font-size: 35px; font-family: fantasy;">{% block title %} {{ post.title }} {% endblock title %}</h1>
+        <hr>
+        <p class=" text-muted" style="font-family: monospace;">{{ post.author }} | {{ post.created_on }}</p>
+        <p class="card-text ">{{ post.content | safe }}</p>
+      </div>
+    </div>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <!-- comments -->
+        <h2 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{ comments.count }} ta Izohlar</h2>
+        <hr>
+        {% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.name }}
+            <span class=" text-muted font-weight-normal">
+              {{ comment.created_on }}
+            </span>
+          </p>
+          {{ comment.body | linebreaks }}
+          <hr style="background-color: black;">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-8 card mb-4  mt-3 " style="background-color: lightsteelblue;">
+      <div class="card-body" >
+        {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+          Izohingiz qabul qilindi tez orada javob olasiz...
+        </div>
+        {% else %}
+        <h3 style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Izohingizni qoldiring</h3>
+        <form method="post" style="margin-top: 1.3em;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary  btn-lg">Izohni jo`natish</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

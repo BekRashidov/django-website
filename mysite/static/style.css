@@ -7,8 +7,10 @@ body {
   padding: 0;
   margin: 0px;
   background: #f6f6f6;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto', sans-serif;
 }
+
+
 
 h1, 
 h2, 
@@ -16,8 +18,9 @@ h3,
 h4, 
 h5, 
 h6{
-  font-family: 'Candal' serif;
-  color: rgb(92, 30, 247);
+  font-family:'Roboto', sans-serif, cursive;
+  font-size: bold;
+  color: black;
   margin: 5px;
 }
 
@@ -33,12 +36,13 @@ a{
 
 .btn{
   padding: .5rem 1rem;
-  background: rgb(50, 125, 120);
-  color: white;
   border: 1px solid transparent;
   border-radius: .25rem;
   font-size: 1.08em;
   font-family: 'Lora' , serif;
+  color: #fff;
+  background-color:  #3361e0;
+  border-color: #1e51dc;
 }
 .btn-big{
   padding: .7rem 1.3rem;
@@ -46,8 +50,9 @@ a{
 }
 .btn:hover{
   color: white !important;
-  background:  rgb(30, 66, 63);
+  background:  #0f2a72;
 }
+
 
 
 
@@ -55,9 +60,9 @@ body {
   overflow-x: hidden;
 }
 
+
 .navbar .nav-link {
   font-size: 14px;
-  text-transform: uppercase;
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
@@ -72,22 +77,6 @@ body {
 
 .carousel-item .imgcar{
   width: 100%;
-}
-
-
-#bg-box {
-  background-image: url("../img/lights.jpg");
-  background-attachment: fixed;
-  min-height: 200px;
-  position: relative;
-}
-.dark-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6)
 }
 
 
@@ -114,7 +103,7 @@ body {
   color: #999 !important;
 }
 .follow{
-  background: #fff;
+  background-color: lightblue;
   padding: 10px;
   margin: 15px;
 }
@@ -190,13 +179,13 @@ body {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  border: 2px solid rgb(50, 125, 120);
+  border: 2px solid #3361e0;;
   background: transparent;
   border-radius: 0px;
-  color: rgb(50, 125, 120) !important;
+  color: #3361e0 !important;
 }
 .content .main-content .post .read-more:hover{
-  background: rgb(50, 125, 120);
+  background:  #0f2a72;
   color: white !important;
   transition: .25s;
 }
@@ -218,18 +207,19 @@ body {
   padding: 0 1.5rem;
 }
 .accordion-item{
-  background-color: white;
+  background-color: gainsboro;
   border-radius: .4rem;
   margin-bottom: 1rem;
   padding: 1rem;
   box-shadow: 1rem 1rem 1rem -1em #624635;
 }
 .accordion-link{
-  font-size: 1.6rem;
-  color: rgba(255, 255, 255, .8);
+  font-size: 2rem ;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
   text-decoration: none;
   text-decoration-style: none;
-  background-color: #0c0c0c; 
+  background-color: lightblue; 
   width: 100%;
   display: flex;
   align-items: center;
@@ -277,6 +267,7 @@ display: none;
 .accordion-item:target:target .accordion-link .minus{
   display: block;
 }
+
 
 
 

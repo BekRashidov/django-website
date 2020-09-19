@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        background-color: lightblue;
+      }
+
+    /* .shadow{
+           box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
+       } */
+      .btn-danger {
+        color: #fff;
+        background-color:  #3361e0;
+        border-color: #1e51dc;
+      }
+
+     .masthead {
+              background:#1e3c5f;
+              height: auto;
+              padding-bottom: 15px;
+              padding-top: 10px;
+    }
+    </style>
+
+    <!-- Navigation -->
+    
+
+
+            {% block content %}
+          <!-- Content Goes here -->
+            {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="py-3 bg-grey">
+              <p class="m-0 text-dark text-center ">Copyright &copy; Kahharoff</p>
+    </footer>
+
+  </body>
+</html>

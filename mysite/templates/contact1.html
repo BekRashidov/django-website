@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Biz bilan bog`laning</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "contact/images/icons/favicon.ico" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/css-hamburgers/hamburgers.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/animsition/css/animsition.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/vendor/daterangepicker/daterangepicker.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "contact/css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "contact/css/main.css" %}">
+<!--===============================================================================================-->
+
+
+</head>
+<body >
+
+
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container">
+		  <a href="{% url 'home' %}" class="navbar-brand">
+			<img src="../static/assets/balogo.jpg" alt="">
+			<strong style="color: aliceblue;">iLawyer.uz </strong>
+		  </a>
+		  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a href="{% url 'home' %}" class="nav-link">Bosh sahifa</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{% url 'about' %}" class="nav-link">Biz haqimizda</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{% url 'blog:index' %}" class="nav-link">Blog</a>
+			  </li>
+			  <li class="nav-item">
+				<a href="{% url 'blog:contact' %}" class="nav-link">Biz bilan bog'laning</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+	<center style="background-color: #1e3c5f; padding: 20px; color: white;">
+		<h2>Rahmat {{ first_name }}!</h2>
+		<p>Tez orada siz bilan bog`lanamiz!</p>
+	</center> 
+	<br/><br/><br/>
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form action="{% url 'blog:contact' %}" method="POST" class="contact100-form validate-form">
+				{% csrf_token %}
+				<span class="contact100-form-title">
+					Bizga xabar yuboring!
+				</span>
+
+				<label class="label-input100" for="first-name">Ismingiz</label>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+					<input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="email">Elektron Pochtangiz</label>
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="message">Xabar</label>
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						Jo`natish
+					</button>
+				</div>
+			</form>
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');"><!--url('images/bg-01.jpg')-->
+				<div class="flex-w size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-map-marker"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Manzil:
+						</span>
+
+						<span class="txt2">
+							Ofiz manzili yeri
+						</span>
+					</div>
+				</div>
+
+				<div class="dis-flex size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-phone-handset"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Qo`ngiroq uchun
+						</span>
+
+						<span class="txt3">
+							+1 800 1236879
+						</span>
+					</div>
+				</div>
+
+				<div class="dis-flex size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-envelope"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							Umumiy savollar uchun
+						</span>
+
+						<span class="txt3">
+							contact@example.com
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+	<!--=======================================================================Preloader-->
+	
+	<!--=======================================================================Preloader-->
+
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/animsition/js/animsition.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/bootstrap/js/popper.js" %}"></script>
+	<script src="{% static "contact/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/select2/select2.min.js" %}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/daterangepicker/moment.min.js" %}"></script>
+	<script src="{% static "contact/vendor/daterangepicker/daterangepicker.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/vendor/countdowntime/countdowntime.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "contact/js/main.js" %}"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+</body>
+</html>
