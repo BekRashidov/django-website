@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+ {% block content %}
+ <script src="//code.jivosite.com/widget/pvNOxCEa74" async></script>
+<style>
+
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        background-color: #ffffff;
+        background-image: url('../static/assets/4d784638e3c95a9660755f302ae01e41.jpg');
+    }
+
+    .head_text{
+    color: white;
+  }
+  .card-body {
+    background-color: gainsboro;
+  }
+  .card-title {
+    text-align: center;
+    font-family: fantasy;
+  }
+    
+
+</style>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a href="{% url 'home' %}" class="navbar-brand">
+        <img src="../static/assets/balogo.jpg" alt="" style=" width: 50px;">
+        <strong style="color: aliceblue;">iLawyer.uz </strong>
+      </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="{% url 'home' %}" class="nav-link">Bosh sahifa</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'about' %}" class="nav-link">Biz haqimizda</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'blog:index' %}" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'blog:contact' %}" class="nav-link">Biz bilan bog'laning</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <header class="masthead" >
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class=" col-md-8 col-md-10 mx-auto">
+                  <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white" style="text-align: center; font-size: 35px;">Post bo`limi </h3>
+                    <p class="text-light" style="text-align: center;">Post haqida toliq malumot
+                    </p>
+                  </div>
+                      </div>
+                    </div>
+                  </div>
+              
+              </header>
+
+            <div class="container">
+                <div class="row">
+
+              <!-- Blog Entries Column -->
+              <div class="col-md-8 mt-3 left">
+                    {% for post in post_list %}
+                <div class="card mb-4" >
+                  <div class="card-header" style="background-color: lightblue;">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                  </div>
+                  <div class="card-body">
+                    <!-- <h2 class="card-title">{{ post.title }}</h2>
+                    <hr> -->
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <div class="text-center">
+                       <a href="{% url 'blog:post_detail' post.slug  %}" class="btn btn-primary">Batafsil &rarr;</a>
+                    </div>
+                   
+                  </div>
+
+                </div>
+                {% endfor %}
+            </div>
+                {% block sidebar %}
+                {% include 'sidebar.html' %}
+                {% endblock sidebar %}
+            </div>
+        </div>
+        {% if is_paginated %}
+          <nav aria-label="Page navigation conatiner">
+            <ul class="pagination justify-content-center" >
+              {% if page_obj.has_previous %}
+              <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Oldingi </a></li>
+              {% endif %}
+              {% if page_obj.has_next %}
+              <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Keyingi &raquo;</a></li>
+
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+{%endblock%}
